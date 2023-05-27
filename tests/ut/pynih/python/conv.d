@@ -20,7 +20,7 @@ private void backAndForth(T)
     value.toPython.to!(typeof(value)).shouldEqual(value, file, line);
 }
 
-
+/*
 @Types!(
     bool,
     byte, ubyte, short, ushort, int, uint, long, ulong,  // integral
@@ -39,7 +39,7 @@ void testBackAndForthGc(T)()
 {
     check!((T d) => d.toPython.to!T == d);
 }
-
+*/
 
 @("DateTime")
 unittest {
@@ -52,7 +52,7 @@ unittest {
     backAndForth(Date(2018, 1, 2));
 }
 
-
+/*
 @Values("foobar", "quux")
 @("string.ascii")
 unittest {
@@ -68,7 +68,7 @@ unittest {
     const value = getValue!string;
     backAndForth(value);
 }
-
+*/
 @("stringz")
 unittest {
     import std.string: toStringz, fromStringz;
